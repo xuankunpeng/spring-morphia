@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="mongoOne" name="mongoDef" class="com.so.smorphia.MongoFactoryBean">
+	</bean>
+
+	<bean id="mongoOneV" class="com.so.smorphia.MongoFactoryBean">
+		<property name="address">
+			<value>localhost</value>
+		</property>
+	</bean>
+
+	<bean id="mongoOnePort" class="com.so.smorphia.MongoFactoryBean">
+		<property name="address">
+			<value>localhost:27017</value>
+		</property>
+	</bean>
+
+	<bean id="mongoMultiCSPort" class="com.so.smorphia.MongoFactoryBean">
+		<property name="multiAddress">
+			<value>localhost:27017, localhost:27027</value>
+		</property>
+	</bean>
+
+	<bean id="mongoMultiPort" class="com.so.smorphia.MongoFactoryBean">
+		<property name="multiAddress">
+			<list>
+				<value>localhost:27017</value>
+				<value>localhost:27027</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

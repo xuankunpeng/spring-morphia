@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="morphiaOneClass" name="morphiaDef" class="com.so.smorphia.MorphiaFactoryBean">
+		<property name="mapClasses"><value>com.so.smorphia.model.Prop</value></property>
+	</bean>
+	
+	<bean id="morphiaMultiClass" class="com.so.smorphia.MorphiaFactoryBean">
+		<property name="mapClasses">
+			<list>
+			<value>com.so.smorphia.model.Prop</value>
+			<value>com.so.smorphia.model.Prop2</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="morphiaMultiCSClass" class="com.so.smorphia.MorphiaFactoryBean">
+		<property name="mapClasses">
+			<value>com.so.smorphia.model.Prop, com.so.smorphia.model.Prop2</value>
+		</property>
+	</bean>
+	
+	<bean id="morphiaPackage" class="com.so.smorphia.MorphiaFactoryBean">
+		<property name="mapPackages"><value>com.so.smorphia.model</value></property>
+	</bean>
+	
+</beans>
